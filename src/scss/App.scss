@@ -1,0 +1,169 @@
+$mainBg: linear-gradient(rgb(46, 62, 143), rgb(47, 150, 163));
+$navBg: #1d2225;
+$inputBg: #79b791;
+$btnBg: #7f6a93;
+$fontcolor: #edf4ed;
+
+* {
+  box-sizing: inherit;
+}
+
+body {
+  margin: 0;
+  font-family: monospace;
+  background: $mainBg;
+  box-sizing: border-box;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
+}
+
+.App {
+  height: 100vh;
+  color: $fontcolor;
+
+  .ContentContainer {
+    display: flex;
+    justify-content: space-between;
+
+    .NewsContainer {
+      width: 400px;
+      height: 80vh;
+      overflow: scroll;
+      padding: 20px;
+      background: $navBg;
+      border-radius: 10px;
+      margin: 10px;
+
+      .spinner {
+        display: flex;
+        justify-content: center;
+        &__icon {
+          width: 40px;
+          height: auto;
+        }
+      }
+      a {
+        color: $fontcolor;
+        text-decoration: none;
+      }
+      .news-item {
+        margin-bottom: 10px;
+        background: $btnBg;
+        border-radius: 10px;
+        .img-container {
+          img {
+            width: 100%;
+            border-radius: 10px 10px 0 0;
+          }
+        }
+        .text-container {
+          padding: 10px;
+        }
+      }
+    }
+  }
+
+  .btn {
+    border: none;
+    font-family: inherit;
+    font-size: 0.875rem;
+    padding: 0.625rem;
+    border-radius: 1.25rem;
+    width: 4.375rem;
+    background: $btnBg;
+    color: $fontcolor;
+    font-weight: 700;
+    cursor: pointer;
+
+    &:focus {
+      outline: none;
+    }
+
+    &:hover {
+      opacity: 0.9;
+    }
+  }
+}
+
+.Navigation {
+  background-color: $navBg;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.625rem;
+  min-height: 3.75rem;
+
+  a:link,
+  a:hover,
+  a:active,
+  a:visited {
+    color: $fontcolor;
+    text-decoration: none;
+  }
+
+  &__help {
+    a:link.active,
+    a:hover.active,
+    a:active.active,
+    a:visited.active {
+      font-weight: 700;
+    }
+  }
+}
+
+.TodoList {
+  padding: 1.25rem 0.625rem;
+
+  &__form {
+    input {
+      font-family: inherit;
+      padding: 0.625rem 1rem;
+      border-radius: 1.25rem;
+      border: none;
+      background: $inputBg;
+      margin-right: 0.625rem;
+      color: $fontcolor;
+      font-size: 1.2em;
+      min-width: 21.875rem;
+    }
+  }
+
+  &__items {
+    padding-top: 1.875rem;
+  }
+}
+
+.TodoList ul,
+.DoneList ul {
+  padding: 0;
+
+  li {
+    list-style: none;
+  }
+}
+
+.DoneList {
+  padding: 0.625rem;
+}
+
+.Todo,
+.Done {
+  padding: 0.3125rem 0.5rem 0.3125rem 1rem;
+  background: $inputBg;
+  margin: 0.625rem 0;
+  border-radius: 3.125rem;
+  width: 21.875rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.Done {
+  opacity: 0.5;
+  &__text {
+    text-decoration: line-through;
+  }
+}
